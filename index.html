@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="description" content="Portfólio de Alberto Mozini Alves, estudante de Ciência de Dados na FATEC Adamantina.">
+  <title>Alberto Mozini Alves | Portfólio</title>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #121d32;
+      --card-hover: #192640;
+      --primary: #818cf8;
+      --secondary: #a5b4fc;
+      --text: #f1f5f9;
+      --muted: #a3afc2;
+      --border: rgba(255,255,255,.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, 1050px);
+      margin: auto;
+    }
+
+    /* Cabeçalho */
+
+    header {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      padding: 85px 0;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(99,102,241,.22), transparent 45%),
+        radial-gradient(ellipse at 10% 90%, rgba(129,140,248,.12), transparent 45%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--secondary);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 850px;
+      overflow-wrap: anywhere;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .formation {
+      margin-top: 22px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 600px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .line {
+      width: 55px;
+      height: 4px;
+      border-radius: 10px;
+      background: var(--primary);
+      margin-top: 32px;
+    }
+
+    /* Projeto */
+
+    main {
+      padding: 85px 0;
+    }
+
+    .section-tag {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .project-heading {
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform .25s ease, background .25s ease,
+                  border-color .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: var(--card-hover);
+      border-color: rgba(129,140,248,.45);
+    }
+
+    .card-number {
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 13px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .result {
+      background: linear-gradient(135deg, #192640, #242e55);
+      border-color: rgba(129,140,248,.3);
+    }
+
+    /* Rodapé */
+
+    footer {
+      padding: 60px 0 25px;
+      background: #080e1a;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-heading {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 45px;
+    }
+
+    .contact-link {
+      padding: 11px 20px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--secondary);
+      font-size: .92rem;
+      transition: .2s;
+    }
+
+    .contact-link:hover {
+      background: var(--card-hover);
+      border-color: var(--primary);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 22px;
+      text-align: center;
+      color: #748197;
+      font-size: .82rem;
+    }
+
+    /* Celulares e tablets */
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, 1050px);
+      }
+
+      header {
+        min-height: auto;
+        padding: 80px 0 70px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      main {
+        padding: 60px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .project-card {
+        padding: 26px;
+      }
+
+      .contacts {
+        flex-direction: column;
+      }
+
+      .contact-link {
+        text-align: center;
+      }
+
+      footer {
+        padding-top: 45px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Apresentação pessoal -->
+  <header>
+    <div class="container">
+      <span class="tag">Portfólio pessoal</span>
+
+      <h1>
+        Alberto Mozini <span>Alves</span>
+      </h1>
+
+      <p class="formation">
+        Ciência de Dados · FATEC - Adamantina
+      </p>
+
+      <p class="intro">
+        Ser humano que ainda existe.
+      </p>
+
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <!-- Projeto -->
+  <main>
+    <section class="container" aria-labelledby="project-title">
+
+      <p class="section-tag">Projetos</p>
+
+      <h2 class="project-heading" id="project-title">
+        Meu projeto
+      </h2>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <span class="card-number">01 / CONTEXTO</span>
+          <h3>Problema</h3>
+          <p>
+            [Descreva qual era o problema e para quem ele precisava ser resolvido.]
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="card-number">02 / SOLUÇÃO</span>
+          <h3>O que eu fiz</h3>
+          <p>
+            [Explique a solução que você desenvolveu em uma ou duas frases.]
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="card-number">03 / DESENVOLVIMENTO</span>
+          <h3>Como eu fiz</h3>
+          <p>
+            [Apresente os dados, métodos e ferramentas utilizados no projeto.]
+          </p>
+        </article>
+
+        <article class="project-card result">
+          <span class="card-number">04 / RESULTADOS</span>
+          <h3>Resultado</h3>
+          <p>
+            [Descreva os resultados alcançados. Utilize apenas números e informações reais.]
+          </p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Contatos -->
+  <footer>
+    <div class="container">
+
+      <h2 class="footer-heading">Vamos nos conectar?</h2>
+
+      <p class="footer-text">
+        Entre em contato comigo e acompanhe minha trajetória.
+      </p>
+
+      <nav class="contacts" aria-label="Contatos profissionais">
+
+        <a class="contact-link" href="mailto:alberto@gmail.com">
+          ✉ E-mail: alberto@gmail.com
+        </a>
+
+        <a class="contact-link"
+           href="https://github.com/[seu-usuario]"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+
+      </nav>
+
+      <div class="copyright">
+        © 2026 Alberto Mozini Alves · Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
